@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+    <aop:aspectj-autoproxy/>
+    <bean id="mathAspect" class="aspekti.MathAspect"/>
+    <bean id="ovca" class="implementacija.Ovca"/> 
+    <bean id="pas" class="implementacija.Pas"/>
+    <bean id="kokoska" class="implementacija.Kokoska"/>
+    <bean id="sqrtPowAbsCeilFloor" class="implementacija.SqrtPowAbsCeilFloorImplementation"/>
+    
+    <bean id="ovcaServis" class="servisi.OvcaServis">
+        <constructor-arg ref="ovca" />
+    </bean>
+    
+    <bean id="pasServis" class="servisi.PasServis">
+        <constructor-arg ref="pas"/>
+    </bean>
+    
+    <bean id="kokoskaServis" class="servisi.KokoskaServis">
+        <constructor-arg ref="kokoska"/>
+    </bean>
+    
+    <bean id="mathServis">
+        <constructor-arg ref="sqrtPowAbsCeilFloor"/>
+    </bean>
+    
+</beans>
